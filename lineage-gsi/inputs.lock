@@ -1,0 +1,17 @@
+# SPDX-FileCopyrightText: 2026 The LineageOS-Sonim-XP8-8800 contributors
+# SPDX-License-Identifier: Apache-2.0
+#
+# LineageOS GSI inputs: <variant> <url> <sha256>
+#
+# Only the EXT4 builds are listed, on purpose. The XP8's stock 4.4.205 kernel
+# has no EROFS driver, and only the EXT4 targets (lineage_arm64_bvN4/bgN4)
+# carry VNDK 28/29, which the XP8's Android 10 vendor blobs link against.
+#
+# MisterZtr publishes no checksums. "-" means "not pinned yet": the first
+# successful fetch records the sha256 here (trust on first use). Commit the
+# pinned line so every later build uses the same image.
+#
+# Source: https://github.com/MisterZtr/LineageOS_gsi/releases/tag/v2026.05.24-lineage23.2
+# LineageOS 23.2 (Android 16 QPR2), TrebleDroid based, A/B, built 2026-05-24.
+gapps   https://sourceforge.net/projects/misterztr-gsi/files/LineageOS/Android%2016/LineageOS-23.2-20260524-GAPPS-EXT4-GSI.7z/download   -
+vanilla https://sourceforge.net/projects/misterztr-gsi/files/LineageOS/Android%2016/LineageOS-23.2-20260524-VANILLA-EXT4-GSI.7z/download -

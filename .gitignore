@@ -1,0 +1,8 @@
+# Downloads, scratch space and build outputs (out/ holds images made from
+# your phone's proprietary firmware: never commit them)
+/cache/
+/work/
+/out/
+/backups/
+__pycache__/
+*.pyc

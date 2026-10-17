@@ -51,6 +51,20 @@ export EDL_LOADER=$PWD/work/loaders/prog_emmc_ufs_firehose_Sdm660_ddr.elf
 BACKUP=$PWD/backups/stock
 ```
 
+### On Windows
+
+Use **Git Bash** for every command, never PowerShell or `cmd`, and keep the
+checkout in a path without spaces (for example `C:\xp8`). Follow ndoo's
+[windows.md](https://github.com/ndoo/sonim-xp8-gsi/blob/bbaea8ff1c9bd30d667c28015baf3a2d95ab98ed/docs/windows.md)
+for the tools, the Windows `edl` setup (which replaces the Linux one) and the
+one-time Zadig WinUSB driver for EDL. Windows cannot run the build natively,
+so steps 3 and 4 need **Docker Desktop** (WSL 2, administrator approval and a
+restart):
+
+- step 3: `lineage-gsi/docker-run.sh -- lineage-gsi/build.sh ...`
+- step 4: `lineage-gsi/assemble.sh --docker "$BACKUP"` (run on the host; it
+  starts its own container)
+
 ## 1. Back up (ndoo, unchanged)
 
 ```sh
@@ -101,7 +115,7 @@ Read the warnings the build prints. `ims: skipped` means VoLTE will not work;
 
 ```sh
 lineage-gsi/assemble.sh "$BACKUP"                 # add --magisk for root
-lineage-gsi/docker-run.sh --stock "$BACKUP" -- lineage-gsi/assemble.sh /stock
+lineage-gsi/assemble.sh --docker "$BACKUP"                 # Windows and macOS
 ```
 
 This runs ndoo's `assemble.sh` with a vendor recipe matched to the LineageOS

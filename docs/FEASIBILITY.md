@@ -75,6 +75,14 @@ over EDL. ndoo's scripts expect the phone on the Android 10 build above and
 make a full EDL backup (including IMEI/NV data) first. This repository uses
 those scripts as-is.
 
+The Android 10 requirement rules out units that never received Android 10.
+A Sprint XP8 (product `XP8823`) checked in October 2026 was on Android 8.1
+(`8A.0.5-04-8.1.0-29.64.00`, patch 2020-06-01) with no update offered, and
+the community file host's XP8 folder has only Android 7.1.1 and 8.1 debug
+images. Cross-flashing another variant's Android 10 over EDL is untested here
+and risky: ndoo reports that an AT&T unit flashed with Android 10 stopped
+registering on the network.
+
 ## 4. Kernel: the blocker for a native port
 
 Facts about the stock kernel (from ndoo's analysis of the running phone):

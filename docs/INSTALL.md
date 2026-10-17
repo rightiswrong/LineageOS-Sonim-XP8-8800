@@ -26,7 +26,13 @@ LineageOS route differs.
 
 - An XP8800 on stock Android 10, build `8A.0.0-03-10.0.0-00.40.00`
   (Settings → About phone). ndoo's scripts check for exactly this build.
-- A Linux or macOS computer (Windows: use WSL2 for the build steps), with
+  **Android 8.x phones cannot be used**: the vendor partition is built from
+  the stock Android 10 firmware. Checked on a Sprint unit (product `XP8823`,
+  `8A.0.5-04-8.1.0-29.64.00`, patch 2020-06-01) in October 2026: no Android
+  10 update was offered, and no public Android 10 image for the XP8 was found
+  on the community file host. Check Settings → System → System update first.
+- A Linux or macOS computer, or Windows with Git Bash and Docker Desktop (see
+  [On Windows](#on-windows)), with
   `adb`/`fastboot`, Python 3, `zstd`, `xz`, git, and the EDL tool set up as in
   ndoo's [Prerequisites](https://github.com/ndoo/sonim-xp8-gsi/blob/bbaea8ff1c9bd30d667c28015baf3a2d95ab98ed/docs/install.md#prerequisites).
 - Docker on macOS (or Linux without e2fsprogs/Java/7-Zip). About 30 GiB free.
